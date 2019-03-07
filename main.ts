@@ -35,7 +35,7 @@ namespace makerhu {
     /**
     * Converts milliseconds into seconds
     */
-    //% block="lapTimeInSeconds" group="Infra gate"
+    //% block="lapTime |%value | precision | %precision" group="Infra gate"
     export function lapTimeSec(value: number, precision: number): number {
         return Math.roundWithPrecision(value / 1000, precision);
     }
