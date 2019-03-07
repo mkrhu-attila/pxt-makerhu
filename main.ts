@@ -1,15 +1,17 @@
-/**
-* Custom blocks
-*/
+// Defining variables
+let timerIsRunning = 0;
+let startTime = 0;
+let stopTime = 0;
+
 //% weight=100 color=#b6312f icon="f3c7" block="MakerspaceHu"
-//% groups=['Infra gate', 'others']
+//% groups=['Infra gate']
 namespace makerhu {
     /**
      * Converts milliseconds into seconds
      * @param value - Time in milliseconds eg:100
      * @param precision - Number of decimal places eg:2
      */
-    //% block="lapTimeInSeconds" precision.min=0 precision.max=3 group="Infra gate"
+    //% block="lapTimeInSeconds" group="Infra gate"
     export function lapTimeSec(value: number, precision: number): number {
         return Math.roundWithPrecision(value / 1000, precision);
     }
@@ -28,9 +30,6 @@ namespace makerhu {
     }
 
 
-    let timerIsRunning = 0;
-    let startTime = 0;
-    let stopTime = 0;
     
     //% block="timer" group="Infra gate"
     export function timer(): number {
