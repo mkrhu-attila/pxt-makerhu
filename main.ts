@@ -1,4 +1,6 @@
-basic.showNumber(makerhu.lapTimeSec(13548300, 2))
+input.onButtonPressed(Button.A, function () {
+
+})
 basic.showLeds(`
     . . . . .
     . # . # .
@@ -6,3 +8,6 @@ basic.showLeds(`
     # . . . #
     . # # # .
     `);
+while (true) {
+    makerhu.noise(1)
+} 
