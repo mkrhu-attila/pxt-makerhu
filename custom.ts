@@ -21,4 +21,10 @@ namespace makerhu {
     export function noise(value: number): number {
         return value <= 1 ? value : noise(value - 1) + noise(value - 2);
     }
+
+    //% block="magnitude of 3d vector at x %x and y %y and z %z" advanced=true
+    //% inlineInputMode=inline
+    export function mag3d(x: number, y: number, z: number): number {
+        return Math.sqrt(x * x + y * y + z * z);
+    }
 }
