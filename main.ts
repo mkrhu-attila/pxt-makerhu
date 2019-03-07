@@ -19,8 +19,8 @@ namespace makerhu {
         }
     }
 
-    //% block="timer" group="Infra gate"
-    export function timer(): number {
+    //% block="timerTrigger" group="Infra gate"
+    export function timerTrigger(): number {
         if (timerIsRunning == 0) {
             timerIsRunning = 1;
             startTime = input.runningTime();
