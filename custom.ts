@@ -18,10 +18,10 @@ namespace makerhu {
      * Flashes built-in LEDs when input is 1, stops when input is 0.
      * @param value  eg:0
      */
-    //% block="noise on screen |%value"  
+    //% block="noise on screen |%value"  value.min=0 value.max=1
     export function noise(value: number): void {
         let dimension = 4
-        if (value = 1) {
+        if (value == 1) {
             led.toggle(Math.randomRange(0, dimension), Math.randomRange(0, dimension))
             basic.pause(5)
         } else { }
