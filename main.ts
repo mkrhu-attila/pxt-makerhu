@@ -12,8 +12,8 @@ namespace makerhu {
      * @param precision - Number of decimal places eg:2
      */
     //% block="lapTimeInSeconds" group="Infra gate"
-    export function lapTimeSec(value: number, precision: number): number {
-        return Math.roundWithPrecision(value / 1000, precision);
+    export function lapTimeSec(value: number, precision: number): void {
+        Math.roundWithPrecision(value / 1000, precision);
     }
 
     /**
@@ -28,8 +28,6 @@ namespace makerhu {
             basic.pause(5);
         }
     }
-
-
     
     //% block="timer" group="Infra gate"
     export function timer(): number {
