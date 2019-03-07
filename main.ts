@@ -1,7 +1,7 @@
 /**
 * Custom blocks
 */
-//% weight=100 color=#b6312f icon="" block="MakerspaceHu"
+//% weight=100 color=#b6312f icon="f3c7" block="MakerspaceHu"
 //% groups=['Infra gate', 'others']
 namespace makerhu {
     /**
@@ -18,13 +18,32 @@ namespace makerhu {
      * Flashes built-in LEDs when input is 1, stops when input is 0.
      * @param value  eg:0
      */
-    //% block="noise on screen |%value"  value.min=0 value.max=1
+    //% block="noise on screen |%value"  value.min=0 value.max=1 group="Infra gate"
     export function noise(value: number): void {
-        let dimension = 4
+        let dimension = 4;
         if (value == 1) {
-            led.toggle(Math.randomRange(0, dimension), Math.randomRange(0, dimension))
-            basic.pause(5)
-        } else { }
+            led.toggle(Math.randomRange(0, dimension), Math.randomRange(0, dimension));
+            basic.pause(5);
+        }
+    }
+
+
+    let timerIsRunning = 0;
+    let startTime = 0;
+    let stopTime = 0;
+    
+    //% block="timer" group="Infra gate"
+    export function timer(): number {
+        if (timerIsRunning == 0) {
+            timerIsRunning = 1;
+            startTime = input.runningTime();
+            return 0;
+        } else {
+            timerIsRunning = 0;
+            stopTime = input.runningTime();
+            basic.clearScreen();
+            return stopTime - startTime;
+        }
     }
 
 }
