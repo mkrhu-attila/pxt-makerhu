@@ -7,16 +7,6 @@ let stopTime = 0;
 //% groups=['Infra gate']
 namespace makerhu {
     /**
-     * Converts milliseconds into seconds
-     * @param value - Time in milliseconds eg:100
-     * @param precision - Number of decimal places eg:2
-     */
-    //% block="lapTimeInSeconds" group="Infra gate"
-    export function lapTimeSec(value: number, precision: number): void {
-        Math.roundWithPrecision(value / 1000, precision);
-    }
-
-    /**
      * Flashes built-in LEDs when input is 1, stops when input is 0.
      * @param value  eg:0
      */
@@ -28,7 +18,7 @@ namespace makerhu {
             basic.pause(5);
         }
     }
-    
+
     //% block="timer" group="Infra gate"
     export function timer(): number {
         if (timerIsRunning == 0) {
@@ -41,6 +31,13 @@ namespace makerhu {
             basic.clearScreen();
             return stopTime - startTime;
         }
+    }
+    /**
+    * Converts milliseconds into seconds
+    */
+    //% block="lapTimeInSeconds" group="Infra gate"
+    export function lapTimeSec(value: number, precision: number): number {
+        return Math.roundWithPrecision(value / 1000, precision);
     }
 
 }
