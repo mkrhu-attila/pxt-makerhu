@@ -9,7 +9,7 @@ namespace makerhu {
      * @param value - Time in milliseconds eg:100
      * @param precision - Number of decimal places eg:2
      */
-    //% block="lapTimeInSeconds" precision.min=0 precision.max=3 
+    //% block="lapTimeInSeconds" precision.min=0 precision.max=3 group="Infra gate"
     export function lapTimeSec(value: number, precision: number): number {
         return Math.roundWithPrecision(value / 1000, precision);
     }
