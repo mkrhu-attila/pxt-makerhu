@@ -27,12 +27,4 @@ namespace makerhu {
         } else { }
     }
 
-    /**
-     * Flashes built-in LEDs when input is 1, stops when input is 0.
-     */
-    //% block="noise on LED matrix |%status"
-    export function noisde(status: number): number {
-        return Math.sqrt(status * status);
-    }
-
 }
