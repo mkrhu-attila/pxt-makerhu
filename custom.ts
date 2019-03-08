@@ -2,6 +2,7 @@
 let timerIsRunning = 0;
 let startTime = 0;
 let stopTime = 0;
+let lapTime = 0;
 
 //% weight=100 color=#b6312f icon="f3c7" block="MakerspaceHu"
 //% groups=['Infra gate']
@@ -29,7 +30,10 @@ namespace makerhu {
             timerIsRunning = 0;
             stopTime = input.runningTime();
             basic.clearScreen();
-            return stopTime - startTime;
+            lapTime = stopTime - startTime;
+            startTime =0;
+            stopTime = 0;
+            return lapTime;
         }
     }
     /**
