@@ -20,7 +20,7 @@ namespace makerhu {
         }
     }
 
-    //% block="timerTrigger" group="Infra gate"
+    //% block="timerTrigger" group="Infra gate" 
     export function timerTrigger(): number {
         if (timerIsRunning == 0) {
             timerIsRunning = 1;
